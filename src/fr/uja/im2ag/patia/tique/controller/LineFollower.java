@@ -1,3 +1,4 @@
+package fr.uja.im2ag.patia.tique.controller;
 import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.SensorPort;
 import lejos.utility.Delay;
