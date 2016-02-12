@@ -7,6 +7,8 @@ import lejos.robotics.filter.MeanFilter;
 
 //test
 
+// test Mary
+
 public class ColorSensor
 {
     private static float[] path_color;
