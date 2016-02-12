@@ -1,3 +1,4 @@
+package fr.uja.im2ag.patia.tique.controller;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.Port;
 
