@@ -1,3 +1,4 @@
+package fr.uja.im2ag.patia.tique.controller;
 import lejos.hardware.Button;
 import lejos.hardware.port.Port;
 import lejos.hardware.sensor.EV3ColorSensor;
@@ -5,7 +6,7 @@ import lejos.robotics.Color;
 import lejos.robotics.SampleProvider;
 import lejos.robotics.filter.MeanFilter;
 
-//test
+// test Jeremy
 
 // test Mary
 
