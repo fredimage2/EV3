@@ -1,4 +1,4 @@
-package fr.uja.im2ag.patia.tique.controller;
+package fr.uja.im2ag.patia.syska.controller;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.Port;
 
@@ -26,20 +26,17 @@ public class DifferentialDrive
         mRightMotor.forward();
     }
 
-
     public void stop()
     {
         mLeftMotor.stop();
         mRightMotor.stop();
     }
 
-
     public void rotateClockwise()
     {
         mLeftMotor.forward();
         mRightMotor.backward();
     }
-
 
     public void rotateCounterClockwise()
     {
