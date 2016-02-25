@@ -1,7 +1,9 @@
-package fr.uja.im2ag.patia.tique.controller;
+package fr.uja.im2ag.patia.syska.controller;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import fr.uja.im2ag.patia.syska.controller.ColorSensor;
 
 public class ColorSensorTest {
 
