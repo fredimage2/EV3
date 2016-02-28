@@ -1,4 +1,4 @@
-package fr.uja.im2ag.patia.tique.controller;
+package fr.uja.im2ag.patia.syska.controller;
 import lejos.hardware.Button;
 import lejos.hardware.Sound;
 import lejos.hardware.port.Port;
