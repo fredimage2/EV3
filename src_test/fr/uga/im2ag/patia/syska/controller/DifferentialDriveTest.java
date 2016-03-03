@@ -1,8 +1,9 @@
-package fr.uga.im2ag.patia.syska;
+package fr.uga.im2ag.patia.syska.controller;
 import static org.junit.Assert.*;
-import fr.uga.im2ag.patia.syska.controller.*;
 
 import org.junit.Test;
+
+import fr.uga.im2ag.patia.syska.controller.DifferentialDrive;
 
 public class DifferentialDriveTest {
 

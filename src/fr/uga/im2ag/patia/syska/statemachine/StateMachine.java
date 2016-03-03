@@ -1,6 +1,6 @@
-package fr.uja.im2ag.patia.syska.statemachine;
+package fr.uga.im2ag.patia.syska.statemachine;
 
-import fr.uja.im2ag.patia.syska.statemachine.action.Action;
+import fr.uga.im2ag.patia.syska.statemachine.action.Action;
 import lejos.hardware.Button;
 
 public class StateMachine {

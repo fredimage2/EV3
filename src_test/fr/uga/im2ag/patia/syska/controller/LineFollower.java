@@ -1,8 +1,7 @@
-package fr.uga.im2ag.patia.syska;
+package fr.uga.im2ag.patia.syska.controller;
 import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.SensorPort;
 import lejos.utility.Delay;
-import fr.uga.im2ag.patia.syska.controller.*;
 
 
 public class LineFollower
