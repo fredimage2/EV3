@@ -2,8 +2,6 @@ package fr.uja.im2ag.patia.syska.statemachine.action;
 
 public class SizingAction  extends Action {
 	
-	private boolean b_Action_First = true;
-	
 	public SizingAction(Action leapFrogCreatingAction) {
 		super(leapFrogCreatingAction);
 	}

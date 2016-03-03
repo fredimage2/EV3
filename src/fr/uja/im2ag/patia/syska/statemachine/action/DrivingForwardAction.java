@@ -18,7 +18,7 @@ public class DrivingForwardAction extends Action {
 		Action ret = null;
 		if (this.getFsm().isGloballyIterrupted())
 			return new TerminatingAction(this);
-		if (this.getController().getTouchSensor().isPressed())
+		if (this.getController().getTouchSensor().isTouching())
 			return new SizingAction(this);
 		return ret;
 	}

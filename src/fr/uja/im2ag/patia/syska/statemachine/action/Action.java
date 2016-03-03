@@ -11,6 +11,8 @@ public abstract class Action {
 	private StateMachine fsm;
 	private GlobalController controller;
 	
+	protected boolean b_Action_First = true;
+	
 	public Action(StateMachine fsm,GlobalController controller) {
 		this.fsm = fsm;
 		this.controller = controller;

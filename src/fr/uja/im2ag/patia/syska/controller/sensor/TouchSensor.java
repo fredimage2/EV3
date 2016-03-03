@@ -11,7 +11,7 @@ public class TouchSensor {
 		touchSensor = new EV3TouchSensor(sensor_port);
 	}
 	
-	boolean isTouching() {
+	public boolean isTouching() {
 		int sampleSize = touchSensor.sampleSize();
 		float[] sample = new float[sampleSize];
 		touchSensor.fetchSample(sample, 0);

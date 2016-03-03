@@ -9,6 +9,7 @@ public class TerminatingAction extends Action {
 	public void run() {
 		this.getController().log("STOP !!");
 		this.getController().getDrive().stop();
+		b_Action_First = false;
 	}
 	
 	public Action needsToBeReplaced() {
@@ -19,8 +20,7 @@ public class TerminatingAction extends Action {
 	 *  Only true return in ending actions : TerminatingAction 
 	 */
 	public boolean needsGlobalEnding() {
-		return true;
+		return (!b_Action_First)&&true; // To execute the run function at least once
 	}
-
-
+	
 }

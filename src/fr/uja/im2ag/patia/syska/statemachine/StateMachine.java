@@ -25,7 +25,7 @@ public class StateMachine {
 				this.setCurrentAction(nextAction);
 			else
 				this.getCurrentAction().run();
-		} while (this.currentAction.needsGlobalEnding());
+		} while (!this.currentAction.needsGlobalEnding());
 	}
 	
 	public boolean isGloballyIterrupted(){

@@ -1,6 +1,7 @@
 package fr.uja.im2ag.patia.syska.controller;
 
 import fr.uja.im2ag.patia.syska.controller.motion.Motion;
+import fr.uja.im2ag.patia.syska.controller.sensor.TouchSensor;
 import lejos.hardware.port.Port;
 
 public class GlobalController {
@@ -16,7 +17,7 @@ public class GlobalController {
 	}
 	
 	public TouchSensor getTouchSensor() {
-		return touchSensor;
+		return this.touchSensor;
 	}
 
 	public Motion getDrive() {
@@ -25,6 +26,13 @@ public class GlobalController {
 	
 	public void log(String msg) {
 		System.out.println("log>\t" + msg);
+	}
+	
+	public void log(String msg,boolean carriage_return) {
+		if (carriage_return)
+			log(msg);
+		else
+			System.out.print(msg);
 	}
 	
 }
