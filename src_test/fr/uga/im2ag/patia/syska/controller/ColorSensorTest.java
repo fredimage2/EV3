@@ -3,6 +3,7 @@ package fr.uga.im2ag.patia.syska.controller;
 import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.port.SensorPort;
+import fr.uga.im2ag.patia.syska.controller.sensor.*;
 
 public class ColorSensorTest {
 	public static void main(String[] args) throws InterruptedException {

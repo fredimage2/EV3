@@ -3,6 +3,7 @@ import lejos.hardware.Button;
 import lejos.hardware.Sound;
 import lejos.hardware.port.Port;
 import lejos.utility.Delay;
+import fr.uga.im2ag.patia.syska.controller.sensor.*;;
 
 public class Controller
 {
