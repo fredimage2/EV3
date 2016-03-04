@@ -1,6 +1,6 @@
-package fr.uja.im2ag.patia.syska.controller;
+package fr.uga.im2ag.patia.syska.controller;
 
-import fr.uja.im2ag.patia.syska.controller.motion.ArmClamp;
+import fr.uga.im2ag.patia.syska.controller.motion.ArmClamp;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.port.MotorPort;
 

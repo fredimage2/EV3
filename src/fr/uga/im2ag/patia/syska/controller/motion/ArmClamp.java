@@ -1,4 +1,4 @@
-package fr.uja.im2ag.patia.syska.controller.motion;
+package fr.uga.im2ag.patia.syska.controller.motion;
 
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.Port;
