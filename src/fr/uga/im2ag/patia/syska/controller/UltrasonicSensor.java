@@ -1,4 +1,4 @@
-package fr.uga.im2ag.patia.syska.controller;
+         package fr.uga.im2ag.patia.syska.controller;
 
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.port.Port;
