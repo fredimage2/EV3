@@ -10,7 +10,7 @@ public class DrivingForwardAction extends Action {
 	}
 	
 	public void run() {
-		this.getController().log("On roule jusqu'� toucher.");
+		this.getController().log("On roule jusqu'à toucher.");
 		this.getController().getDrive().forward();
 	}
 	
