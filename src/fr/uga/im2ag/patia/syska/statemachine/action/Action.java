@@ -1,7 +1,6 @@
 package fr.uga.im2ag.patia.syska.statemachine.action;
 
 import fr.uga.im2ag.patia.syska.controller.GlobalController;
-import fr.uga.im2ag.patia.syska.statemachine.StateMachine;
 import lejos.utility.Delay;
 
 /**
@@ -20,12 +19,6 @@ import lejos.utility.Delay;
  */
 public abstract class Action {
 
-	/** Temps d'attente tolérable. Le plus bref possible. */
-	private final static int DELAY = 25;
-
-	/** l'automate d'état en charge d'exécuter l'action. */
-	private StateMachine fsm;
-
 	/**
 	 * le contrôleur du robot EV3 permettant d'exécuter des commandes mécaniques
 	 * et d'interroger les capteurs physiques.
@@ -36,31 +29,30 @@ public abstract class Action {
 	 * booléen permettant de caractériser la première exécution de l'action au
 	 * niveau de l'automate.
 	 */
-	protected boolean b_Action_First = true;
+	private boolean b_Action_First = true;
 
 	/*
-	 * Constructeur
-	 * 
-	 * @param fsm l'automate d'états en charge d'exéctuter l'action.
+	 * Constructeur initial d'action.
 	 * 
 	 * @param controller le contrôleur 'mécanique' du robot EV3.
 	 */
 
-	public Action(StateMachine fsm, GlobalController controller) {
-		this.fsm = fsm;
+	public Action(GlobalController controller) {
 		this.controller = controller;
 	}
 
 	/*
-	 * Constructeur d'une action à partir d'une autre action la précédant.
-	 * 
-	 * @param leapFrogCreatingAction l'action précédente.
+	 * Actions mécaniques à faire en premier lieu.
 	 */
-	public Action(Action leapFrogCreatingAction) {
-		this.fsm = leapFrogCreatingAction.getFsm();
-		this.controller = leapFrogCreatingAction.getController();
+	public void preActions() {
 	}
 
+	/*
+	 * Actions mécaniques à faire avant de passer à l'action suivante.
+	 */
+	public void postActions() {
+	}
+	
 	/*
 	 * Suite d'opérations 'mécaniques' attendues. Se doit d'être d'un temps
 	 * d'exécution très court.
@@ -81,17 +73,17 @@ public abstract class Action {
 	public abstract boolean needsGlobalEnding();
 
 	/*
-	 * Possibilité de simuler un temps d'attente. Le plus bref possible.
+	 * @return true lors de la première exécution de l'action ; false sinon.
 	 */
-	private void delay() {
-		Delay.msDelay(DELAY);
+	public boolean isFirstRun() {
+		return b_Action_First;
 	}
 
 	/*
-	 * @return l'automate d'états en charge d'exéctuter l'action.
+	 * @parameter b_IsFirstRun indicateur de première exécution de l'action.
 	 */
-	public StateMachine getFsm() {
-		return fsm;
+	public void setIsFirstRun(boolean b_IsFirstRun) {
+		b_Action_First = b_IsFirstRun;
 	}
 
 	/*

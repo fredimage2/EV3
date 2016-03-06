@@ -1,4 +1,4 @@
-package fr.uga.im2ag.patia.syska.controller;
+package fr.uga.im2ag.patia.syska.controller.motion;
 
 import fr.uga.im2ag.patia.syska.controller.motion.ArmClamp;
 import lejos.hardware.lcd.LCD;
@@ -15,13 +15,13 @@ import lejos.hardware.port.MotorPort;
 public class ArmClampTest {
 
 	/** durée de chaque action d'ouverture et de fermeture des pinces. */
-	static int MOVEMENT_TEST_DURATION = 5000;
+	static int MOVEMENT_TEST_DURATION = 4000;
 
 	public static void main(String[] args) throws InterruptedException {
 		ArmClamp arm = new ArmClamp(MotorPort.C);
 		LCD.clear();
 		System.out.println("BEGIN CLOSING ARM CLAMP");
-		arm.closeArmMvt();
+		//arm.closeArmMvt();
 		Thread.sleep(MOVEMENT_TEST_DURATION);
 		System.out.println("END CLOSING ARM CLAMP");
 

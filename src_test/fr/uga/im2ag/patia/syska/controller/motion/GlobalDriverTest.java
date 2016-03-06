@@ -1,5 +1,6 @@
-package fr.uga.im2ag.patia.syska.controller;
+package fr.uga.im2ag.patia.syska.controller.motion;
 
+import fr.uga.im2ag.patia.syska.controller.GlobalController;
 import fr.uga.im2ag.patia.syska.statemachine.StateMachine;
 import fr.uga.im2ag.patia.syska.statemachine.action.DrivingForwardAction;
 import lejos.hardware.lcd.LCD;
@@ -19,10 +20,11 @@ import lejos.hardware.port.SensorPort;
 public class GlobalDriverTest {
 
 	public static void main(String[] args) throws InterruptedException {
-		GlobalController globalController = new GlobalController(SensorPort.S2, MotorPort.B, MotorPort.D);
+		GlobalController globalController = new GlobalController(SensorPort.S2, 
+				MotorPort.B, MotorPort.D, MotorPort.C);
 		LCD.clear();
 		StateMachine sm = new StateMachine();
-		sm.setCurrentAction(new DrivingForwardAction(sm, globalController));
+		sm.setCurrentAction(new DrivingForwardAction(globalController));
 		sm.executeAction();
 		Thread.sleep(5000);
 		LCD.clear();

@@ -1,12 +1,11 @@
 package fr.uga.im2ag.patia.syska.statemachine.action;
 
 import fr.uga.im2ag.patia.syska.controller.GlobalController;
-import fr.uga.im2ag.patia.syska.statemachine.StateMachine;
 
 public class DrivingForwardAction extends Action {
 	
-	public DrivingForwardAction(StateMachine fsm,GlobalController controller) {
-		super(fsm,controller);
+	public DrivingForwardAction(GlobalController controller) {
+		super(controller);
 	}
 	
 	public void run() {
@@ -16,10 +15,10 @@ public class DrivingForwardAction extends Action {
 	
 	public Action needsToBeReplaced() {
 		Action ret = null;
-		if (this.getFsm().isGloballyIterrupted())
-			return new TerminatingAction(this);
+		if (this.getController().isGloballyIterrupted())
+			return new TerminatingAction(this.getController());
 		if (this.getController().getTouchSensor().isTouching())
-			return new SizingAction(this);
+			return new SizingAction(this.getController());
 		return ret;
 	}
 	

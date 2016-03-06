@@ -59,20 +59,19 @@ public class StateMachine {
 		do {
 			Action nextAction = this.getCurrentAction().needsToBeReplaced();
 			if (nextAction != null)
+			{
+				this.getCurrentAction().postActions();
 				this.setCurrentAction(nextAction);
+				this.getCurrentAction().setIsFirstRun(true);
+			}
 			else
+			{
+				if (this.getCurrentAction().isFirstRun())
+					this.getCurrentAction().preActions();
 				this.getCurrentAction().run();
+				if (this.getCurrentAction().isFirstRun())
+					this.getCurrentAction().setIsFirstRun(false);
+			}
 		} while (!this.currentAction.needsGlobalEnding());
-	}
-
-	/*
-	 * Condition générale d'interruption de l'automate. Ici l'appui sur le
-	 * bouton Escape du robot.
-	 * 
-	 * @return true si l'automate doit s'arrêter quelque soit l'action en cours,
-	 * false sinon.
-	 */
-	public boolean isGloballyIterrupted() {
-		return Button.ESCAPE.isDown();
 	}
 }
