@@ -20,7 +20,7 @@ import lejos.hardware.port.SensorPort;
  */
 public class ArmClampSizingWithDurationTest {
 
-	static int MOVEMENT_TEST_DURATION = 1000;
+	static int MOVEMENT_TEST_DURATION = 2000;
 
 	public static void main(String[] args) throws InterruptedException {
 		GlobalController globalController = new GlobalController(SensorPort.S2, MotorPort.B, MotorPort.D, MotorPort.C);
@@ -31,7 +31,7 @@ public class ArmClampSizingWithDurationTest {
 		Action firstAction = new SizingActionWithDuration(globalController, MOVEMENT_TEST_DURATION, secondAction,true); 
 		sm.setCurrentAction(firstAction);
 		sm.executeAction();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		LCD.clear();
 		System.out.println("EXIT");
 		System.exit(0);

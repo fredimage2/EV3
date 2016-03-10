@@ -18,6 +18,12 @@ public abstract class ActionWithDuration extends Action implements TimerListener
 	
 	/** Indicateur de fin de durée */
 	private boolean b_end_duration = false;
+	
+	/** Temps de référence au début de l'action en cours. */
+	private long initTime;
+	
+	/** Durée écoulée de l'action en cours. */
+	private long actingDuration;
 
 	/*
 	 * Constructeur initial d'action.
@@ -50,6 +56,7 @@ public abstract class ActionWithDuration extends Action implements TimerListener
 	 */
 	public void preActions() {
 		timer.start();
+		this.initTime = this.getTenthMillisecond();
 	}
 
 	/*
@@ -63,5 +70,15 @@ public abstract class ActionWithDuration extends Action implements TimerListener
 	public void timedOut() {
 		System.out.println("DUREE ACTION FIN.");
 		this.b_end_duration = true;
+	}
+	
+	public long getActingDuration() {
+		this.actingDuration = this.getTenthMillisecond() - this.initTime; 
+		return this.actingDuration; 
+	}
+	
+	private long getTenthMillisecond()
+	{
+		return System.nanoTime()/100000;
 	}
 }

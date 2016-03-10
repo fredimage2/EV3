@@ -57,17 +57,14 @@ public class StateMachine {
 	 */
 	public void executeAction() {
 		do {
+			if (this.getCurrentAction().isFirstRun())
+				this.getCurrentAction().preActions();
 			Action nextAction = this.getCurrentAction().needsToBeReplaced();
-			if (nextAction != null)
-			{
+			if (nextAction != null) {
 				this.getCurrentAction().postActions();
 				this.setCurrentAction(nextAction);
 				this.getCurrentAction().setIsFirstRun(true);
-			}
-			else
-			{
-				if (this.getCurrentAction().isFirstRun())
-					this.getCurrentAction().preActions();
+			} else {
 				this.getCurrentAction().run();
 				if (this.getCurrentAction().isFirstRun())
 					this.getCurrentAction().setIsFirstRun(false);

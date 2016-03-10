@@ -29,7 +29,7 @@ public abstract class Action {
 	 * booléen permettant de caractériser la première exécution de l'action au
 	 * niveau de l'automate.
 	 */
-	private boolean b_Action_First = true;
+	private boolean b_Action_First;
 
 	/*
 	 * Constructeur initial d'action.
@@ -39,6 +39,7 @@ public abstract class Action {
 
 	public Action(GlobalController controller) {
 		this.controller = controller;
+		this.b_Action_First = true;
 	}
 
 	/*
